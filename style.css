@@ -9,7 +9,6 @@ body {
     position: absolute;
     inset: 0;
 
-    /* MAIN IMAGE (visible clearly) */
     background: url('bg.jpeg') no-repeat center;
     background-size: contain;
     background-color: #0b132b;
@@ -24,14 +23,14 @@ body {
     transition: all 0.5s ease;
 }
 
-/* BLUR BACKGROUND (lighter) */
+/* BLUR BACKGROUND */
 .screen::before {
     content: "";
     position: absolute;
     inset: 0;
 
     background: url('bg.jpeg') no-repeat center/cover;
-    filter: blur(10px) brightness(0.9); /* 👈 reduced blur + better visibility */
+    filter: blur(10px) brightness(0.9);
     transform: scale(1.05);
 
     z-index: 0;
@@ -42,7 +41,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.15); /* 👈 lighter overlay */
+    background: rgba(0,0,0,0.15);
     z-index: 0;
 }
 
