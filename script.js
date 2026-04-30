@@ -3,12 +3,14 @@ const screens = document.querySelectorAll(".screen");
 
 /* SHOW SCREEN */
 function showScreen(index) {
+    if (index < 0 || index >= screens.length) return;
+
     screens[current].classList.remove("active");
     current = index;
     screens[current].classList.add("active");
 }
 
-/* SWIPE */
+/* SWIPE NAVIGATION */
 let startX = 0;
 
 document.addEventListener("touchstart", (e) => {
@@ -19,16 +21,18 @@ document.addEventListener("touchend", (e) => {
     let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
 
+    // swipe left → next
     if (diff > 50 && current < screens.length - 1) {
         showScreen(current + 1);
     }
 
+    // swipe right → previous
     if (diff < -50 && current > 0) {
         showScreen(current - 1);
     }
 });
 
-/* ESCAPE BUTTON */
+/* ESCAPING BUTTON 😈 */
 const btn = document.querySelector(".reject");
 
 btn.addEventListener("mouseenter", move);
