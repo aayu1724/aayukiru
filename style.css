@@ -1,0 +1,79 @@
+/* SCREEN 3 */
+.screen3 {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Keep content above overlay */
+.screen * {
+    position: relative;
+    z-index: 1;
+}
+/* Optional dark overlay for readability */
+.screen3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Keep content above overlay */
+.screen3 * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header3 {
+    margin-bottom: 30px;
+}
+
+.title3 {
+    font-family: 'Pacifico';
+    font-size: 28px;
+}
+
+/* Row layout */
+
+
+/* Cards */
+.memory-card {
+    background: rgba(255,255,255,0.08);
+    padding: 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;   /* 🔥 keeps image clean */
+    border-radius: 10px;
+}
+
+
+@media(max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+    }
+
+    .memory-card img {
+        height: 180px;
+    }
+}
+.memory-card img {
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.05);
+}

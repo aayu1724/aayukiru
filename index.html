@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apology 💔</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0b132b, #1c2541);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Screens */
+.screen { display: none;
+    background: url('bg.jpeg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative; 
+}
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* ✅ move to top */
+    min-height: 100vh;
+    padding-top: 60px;        /* ✅ space from top */
+}
+
+/* -------- SCREEN 1 -------- */
+.card {
+    text-align: center;
+    max-width: 320px;
+}
+
+.card img {
+    width: 140px;
+    border-radius: 20px;
+    background: white;
+    padding: 10px;
+}
+
+.card h1 {
+    font-family: 'Pacifico';
+}
+
+.main-text { color: #ff4d6d; }
+.sub-text { color: #cbd5e1; }
+
+button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.accept {
+    background: #ff4d6d;
+    color: white;
+}
+
+.reject {
+    background: #2c2c54;
+    color: #aaa;
+}
+
+/* -------- SCREEN 2 -------- */
+.screen2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.box {
+    max-width: 500px;
+    margin: auto;
+    border-left: 2px dashed #ff4d6d;
+    border-right: 2px dashed #ff4d6d;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Pacifico';
+    font-size: 28px;
+}
+
+.text {
+    margin: 15px 0;
+    color: #ddd;
+}
+
+.next-btn {
+    margin-top: 20px;
+    background: #ff4d6d;
+    color: white;
+}
+
+/* -------- SCREEN 3 -------- */
+/*
+.title3 {
+    font-family: 'Pacifico';
+    font-size: 26px;
+}
+*/
+.screen3 {
+    padding: 40px 20px;
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.memory-card {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 15px;
+    width: 260px;
+}
+
+.memory-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: pink;
+    animation: float 6s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ❤️ SCREEN 1 -->
+<div class="screen active" id="screen1">
+    <div class="card">
+        <img src="my-photo.jpeg">
+        <h1>Hey... 🥺</h1>
+
+        <div class="main-text">Mujhe pata hai tum naraz ho... 😭</div>
+        <div class="sub-text">Please meri baat sun lo... 🥺</div>
+
+        <br>
+        <button class="accept" onclick="goToScreen2()">Theek hai, bolo...</button>
+        <button class="reject">Nahi, abhi gussa hoon</button>
+    </div>
+</div>
+
+<!-- 💌 SCREEN 2 -->
+<div class="screen screen2" id="screen2">
+    <div class="box">
+        <div class="title">Dil Se Sorry... 💕</div>
+
+        <p class="text">Meri jaan...</p>
+        <p class="text">Mujhe pata hai maine tumhe hurt kiya...</p>
+        <p class="text">Tum mere liye bahut special ho...</p>
+        <p class="text">Maine galti ki aur main accept karta hoon...</p>
+        <p class="text">Tumhari feelings matter karti hain...</p>
+        <p class="text">Main promise karta hoon better rahunga...</p>
+        <p class="text">I'm really sorry... 💔</p>
+        <p class="text">Please ek aur chance do... ❤️</p>
+
+        <button class="next-btn" onclick="goToScreen3()">Aur bhi kuch hai 💕</button>
+    </div>
+</div>
+
+
+<!-- 💕 SCREEN 3 -->
+<div class="screen screen3" id="screen3">
+
+    <!-- Title -->
+    <div class="header3">
+        <div class="title3">Hamari Yaadein ☁️</div>
+        <p>Dekho kitne ache waqt guzare hain saath mein...</p>
+    </div>
+
+    <!-- Images -->
+     <div class="grid">
+    <div class="memory-card">
+        <img src="img1.jpeg">
+    </div>
+
+    <div class="memory-card">
+        <img src="img2.jpeg">
+    </div>
+
+    <div class="memory-card">
+        <img src="img3.jpeg">
+    </div>
+
+    <div class="memory-card">
+        <img src="img4.jpeg">
+    </div>
+</div>
+
+</div>
+
+
+
+
+<!-- Floating hearts -->
+<span class="heart" style="left:20%; bottom:0;">❤</span>
+<span class="heart" style="left:50%; bottom:0; animation-delay:2s;">❤</span>
+<span class="heart" style="left:70%; bottom:0; animation-delay:4s;">❤</span>
+
+<script>
+// Screen switch
+function goToScreen2() {
+    document.getElementById("screen1").classList.remove("active");
+    document.getElementById("screen2").classList.add("active");
+}
+
+function goToScreen3() {
+    document.getElementById("screen2").classList.remove("active");
+    document.getElementById("screen3").classList.add("active");
+}
+
+// Escaping NO button 😈
+const btn = document.querySelector(".reject");
+
+btn.addEventListener("mouseenter", move);
+btn.addEventListener("touchstart", move);
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    move();
+});
+
+function move() {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    btn.style.position = "fixed";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+
+</html>
